@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+
+  installer:
+    container_name: win10
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mcr.microsoft.com/windows/servercore/insider:10.0.20206.1000
+    command: ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+    volumes:
+      - "$OneDriveCommercial\Containers\win10:c:\data"
+      - "$HOME\Documents\installer:c:\installer:ro"
