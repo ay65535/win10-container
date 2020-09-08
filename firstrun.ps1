@@ -39,3 +39,15 @@ docker history win10
 docker run -v "$env:OneDriveCommercial\Containers\win10:c:\data" -v "$HOME\Documents\installer:c:\installer:ro" -it --isolation process --device class/5B45201D-F2F2-4F3B-85BB-30FF1F953599 win10 cmd
 
 # -----
+
+docker-compose down --rmi all --volumes
+docker-compose ps -a
+docker-compose images
+docker ps -a
+docker kill (docker ps -aq)
+docker rm (docker ps -aq)
+docker images -a
+docker rmi (docker images -q)
+docker volume ls
+docker volume rm (docker volume ls -q)
+docker network ls
